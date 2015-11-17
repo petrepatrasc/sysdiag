@@ -1,13 +1,12 @@
 #!/usr/bin/env php
 <?php
-// application.php
 
 namespace Sysdiag\Console;
 
+require __DIR__.'/vendor/autoload.php';
+
 use Sysdiag\Application\Application;
 use Sysdiag\Command\DiagnosisCommand;
-
-require __DIR__.'/vendor/autoload.php';
 
 $application = new Application('Sysdiag', '1.0');
 

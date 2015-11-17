@@ -1,6 +1,6 @@
 {
   "name": "petrepatrasc/sysdiag",
-  "description": "A small utility that enables you to check system diagnostics",
+  "description": "A small utility that enables for checking of system diagnostics",
   "type": "library",
   "license": "MIT",
   "autoload": {
@@ -19,7 +19,7 @@
   },
   "require-dev": {
     "kherge/box": "~2.6",
-    "phpunit/phpunit": "~5"
+    "phpunit/phpunit": "~4.8"
   },
   "bin": [
     "bin/sysdiag"
