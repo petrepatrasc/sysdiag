@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+// application.php
+
+namespace Sysdiag\Console;
+
+use Sysdiag\Application\Application;
+use Sysdiag\Command\DiagnosisCommand;
+
+require __DIR__.'/vendor/autoload.php';
+
+$application = new Application('Sysdiag', '1.0');
+
+$application->add(new DiagnosisCommand());
+
+$application->run();
