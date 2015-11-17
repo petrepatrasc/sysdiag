@@ -7,6 +7,8 @@ namespace Sysdiag\Command;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Sysdiag\Diagnoser\DiagnoserFactory;
+use Sysdiag\Diagnoser\DiagnoserName;
 
 /**
  * Configuration and execution logic for the command that
@@ -26,7 +28,7 @@ class DiagnosisCommand extends Command
 
         $this
             ->setName(CommandName::DIAGNOSIS)
-            ->setDescription('Runs diagnostics through system utilities');
+            ->setDescription('Runs diagnostics in various system utilities');
     }
 
     /**
@@ -35,6 +37,11 @@ class DiagnosisCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln('Running system diagnostics');
+
+        $processHelper = $this->getHelper('process');
+        $diagnoserFactory = new DiagnoserFactory($processHelper);
+
+        $memoryStatuses = $diagnoserFactory->create(DiagnoserName::MEMORY_STATUS)->diagnose();
     }
 
 }
