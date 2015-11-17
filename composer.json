@@ -1,0 +1,25 @@
+{
+    "name": "petrepatrasc/sysdiag",
+    "description": "A small utility that enables you to check system diagnostics",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Petre Pătrașc",
+            "email": "petre@dreamlabs.ro"
+        }
+    ],
+    "require": {
+        "symfony/console": " ~2.4|~3.0"
+    },
+    "require-dev": {
+        "kherge/box": "~2.6",
+        "phpunit/phpunit": "~5"
+    },
+    "bin": [
+        "bin/box"
+    ],
+    "config": {
+        "bin-dir": "bin"
+    }
+}
